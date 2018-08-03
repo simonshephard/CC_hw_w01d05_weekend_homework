@@ -83,9 +83,7 @@ end
 
 
 def sell_pet_to_customer(shop, pet, customer)
-  if pet == nil
-    return nil
-  elsif customer_can_afford_pet(customer, pet)
+  if pet != nil && customer_can_afford_pet(customer, pet)
     remove_pet_by_name(shop, pet[:name])
     add_pet_to_customer(customer, pet)
     price = pet[:price]
